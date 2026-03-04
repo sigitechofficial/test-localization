@@ -34,5 +34,11 @@ export const MESSAGES = {
     "subtitle": "Domyślny język został wybrany na podstawie kraju żądania (nagłówki geo/IP Vercel).",
     "choose": "Wybierz język:",
     "note": "Jeśli zmienisz język, aplikacja zapisze go w ciasteczku NEXT_LOCALE i zapamięta na przyszłość."
-  }
+  },
+    "lv": {
+    "title": "Hallo!",
+    "subtitle": "Die Standardsprache wurde anhand des Landes deiner Anfrage ausgewählt (Vercel Geo/IP-Header).",
+    "choose": "Sprache auswählen:",
+    "note": "Wenn du die Sprache wechselst, speichert die App sie in einem NEXT_LOCALE-Cookie und merkt sie sich."
+  },
 } as const;

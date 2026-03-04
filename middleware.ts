@@ -26,6 +26,7 @@ function localeFromCountry(cc: string | null): Locale | null {
   if (!cc) return null;
   const map: Record<string, Locale> = {
     DE: "de",
+    LV: "de",
     ES: "es",
     TR: "tr",
     PL: "pl",
