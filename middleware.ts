@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const SUPPORTED = ["en", "es", "ar", "tr", "pl", "de"] as const;
+const SUPPORTED = ["en", "es", "ar", "ur", "tr", "pl", "de"] as const;
 const DEFAULT = "en";
 type Locale = (typeof SUPPORTED)[number];
 
@@ -30,6 +30,7 @@ function localeFromCountry(cc: string | null): Locale | null {
     ES: "es",
     TR: "tr",
     PL: "pl",
+    PK: "ur",
     SA: "ar",
     AE: "ar",
     EG: "ar",

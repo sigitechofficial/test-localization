@@ -2,7 +2,7 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import { MESSAGES } from "../messages";
 
-const SUPPORTED_LOCALES = ["en", "es", "ar", "tr", "pl", "de"] as const;
+const SUPPORTED_LOCALES = ["en", "es", "ar", "ur", "tr", "pl", "de"] as const;
 type Locale = (typeof SUPPORTED_LOCALES)[number];
 
 function isLocale(value: string): value is Locale {
@@ -25,7 +25,7 @@ export default async function Page({
   const detectedSource = h.get("x-locale-source") || "n/a";
 
   const t = MESSAGES[locale];
-  const dir = locale === "ar" ? "rtl" : "ltr";
+  const dir = locale === "ar" || locale === "ur" ? "rtl" : "ltr";
   const cardStyle = {
     border: "1px solid #e5e7eb",
     borderRadius: "18px",
