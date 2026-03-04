@@ -9,11 +9,12 @@ function isLocale(value: string): value is Locale {
   return (SUPPORTED_LOCALES as readonly string[]).includes(value);
 }
 
-export default async function Page({ params }: { params: { locale: string } }) {
-  const rawLocale = params.locale;
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const resolvedParams = await params;
+  const rawLocale = resolvedParams.locale;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : "en";
 
-  const h = headers();
+  const h = await headers();
 
   const country = h.get("x-client-country") || "unknown";
   const detectedLocale = h.get("x-locale-detected") || "n/a";

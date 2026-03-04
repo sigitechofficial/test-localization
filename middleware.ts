@@ -15,7 +15,7 @@ function pathLocale(pathname: string): Locale | null {
 
 function getCountry(req: NextRequest): string | null {
   return (
-    (req.geo?.country ??
+    ((req as any).geo?.country ??
       req.headers.get("x-vercel-ip-country") ??
       req.headers.get("cf-ipcountry") ??
       req.headers.get("x-country-code"))?.toUpperCase() ?? null
