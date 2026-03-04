@@ -17,7 +17,7 @@ function getPathLocale(pathname: string): Locale | null {
 
 function getClientCountry(req: NextRequest): string | null {
   // On Vercel, NextRequest.geo?.country is available at the Edge in production.
-  const geoCountry = req.geo?.country ?? null;
+  const geoCountry = (req as any).geo?.country ?? null;
 
   // Also check common headers (Vercel / Cloudflare / custom reverse proxy).
   const headerCountry =
